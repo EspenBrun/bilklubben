@@ -10,6 +10,9 @@
   padding: 0px;
 }*/
 
+/*
+* Landing page
+*/
 .banner {
   min-height: 80vh;
   background-image: url(../res/bilklubben_banner.jpg);
@@ -17,16 +20,30 @@
   background-size: cover;
   background-position: center left;
 }
-
 .banner-txt {
 	color: white;
 	padding-top: 20vh;
 	font-size: 5em;
 }
-
 .container-registration {
   padding: 60px 0px;
 }
+
+/*
+* General
+*/
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+
+
 
 /*.footer {
   margin-top: 60px;
