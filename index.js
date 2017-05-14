@@ -19,7 +19,15 @@ $(document).ready(function(){
         if ( e.which == 38 || e.which == 40 )
             e.preventDefault();
     });  
-      
-
+     
+    // open log in modal
+    $(".open-login-modal").click(function(e){
+    	e.preventDefault();
+        $("#login-modal").modal();
+    });
+    $(".navbar").click(".open-login-modal", function(e){
+		e.preventDefault();
+        $("#login-modal").modal();
+	});
 
 });
