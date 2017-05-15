@@ -8,7 +8,7 @@ $(document).ready(function(){
     	e.preventDefault();
         $("#login-modal").modal();
     });
-    $(".navbar").click(".open-login-modal", function(e){
+    $(".navbar").on("click", ".open-login-modal", function(e){
 		e.preventDefault();
         $("#login-modal").modal();
 	});
