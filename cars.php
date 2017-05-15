@@ -1,9 +1,12 @@
 <!-- Prosjekt Webutvikling 2 -->
 <!-- Bilklubben AS  -->
 <!-- Espen Kirkesæther Brun -->
+
 <?php
-    // Start sesjon -- må komme først
     session_start();
+    if (!isset($_SESSION['email']) && !isset($_SESSION['pwd'])) {
+	    header('Location: ./index.php');
+    }
 ?>
 
 <!DOCTYPE html>
