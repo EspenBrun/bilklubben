@@ -58,11 +58,11 @@ $(document).ready(function(){
     });
     $('#form-login').validate({
         rules: {
-            // email: {
-            //     required: true,
-            //     email: true,
-            //     maxlength: 25
-            // },
+            email: {
+                required: true,
+                email: true,
+                maxlength: 25
+            },
             pwd: {
                 required: true,
                 minlength: 8,
