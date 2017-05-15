@@ -139,7 +139,7 @@
 			      
 			    </div>
 			</div> 
-		</sdiv>
+		</div>
 
 
 		<footer class="footer">
