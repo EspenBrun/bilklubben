@@ -18,10 +18,16 @@
 		$sql .= " (first, last, adress, zip, city, phone, email, pwd)";
 		$sql .= " VALUES ";
 		$sql .= " ('$first', '$last', '$adress', '$zip', '$city', '$phone', '$email', '$pwd')";
-		echo $sql;
+
 		$resultat = mysqli_query($con, $sql); 
 
 		//close
 		mysqli_close($con);
+
+		if ($resultat) {
+			$_SESSION['email'] = $email;
+			$_SESSION['pwd'] = $pwd;
+			header('Location: ../cars.php');
+		}
 	}
 ?>

@@ -22,7 +22,7 @@
 		<nav class="navbar navbar-default navbar-fixed-top">
       		<!-- load from js -->
 	    </nav>
-		<div class="container-fluid container-main">
+		<div class="container-fluid">
 			
 			<div class="row banner">
 				<div class="col-xs-12">

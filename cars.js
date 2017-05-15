@@ -1,3 +1,6 @@
 $(document).ready(function(){
-	console.log("hello cars");
+	// load footer and header
+	$('.navbar').load('navbar.html');
+	$('.footer').load('footer.html');
+     
 });

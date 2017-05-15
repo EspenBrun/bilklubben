@@ -28,6 +28,9 @@
 .container-registration {
   padding: 60px 0px;
 }
+.container-main {
+  padding: 60px 0px;
+}
 
 /*
 * Modal
@@ -45,16 +48,6 @@
 /*
 * General
 */
-/* Hide HTML5 Up and Down arrows. */
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-
 
 
 
