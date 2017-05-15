@@ -103,7 +103,7 @@
 					  </div>
 					</form>
 					<div class="col-sm-offset-2 col-sm-10 text-center">
-						<p><a class="open-login-modal" href="#">Allerede bruker? Log inn her</a></p>
+						<p><a class="open-login-modal" href="#">Allerede bruker? Logg inn her</a></p>
 					</div>
 				</div>
 			</div>
@@ -130,7 +130,7 @@
 			            <div class="checkbox">
 			              <label><input type="checkbox" value="" checked>Husk meg</label>
 			            </div>
-			              <button type="submit" name="btn-login" class="btn btn-success btn-block">Log inn</button>
+			              <button type="submit" name="btn-login" class="btn btn-success btn-block">Logg inn</button>
 			          </form>
 			        </div>
 			        <div class="modal-footer">
