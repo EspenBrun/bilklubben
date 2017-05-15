@@ -29,6 +29,13 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 					<h2 class="text-center">Bilsiden</h2>
+					<?php
+						if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
+					        $email=$_SESSION['email'];
+					        $pwd=$_SESSION['pwd'];
+					        echo $email . $pwd;
+					    }
+				    ?>
 				</div>
 			</div>
 		</div>

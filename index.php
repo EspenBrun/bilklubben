@@ -4,6 +4,9 @@
 <?php
     // Start sesjon -- må komme først
     session_start();
+    if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
+	    header('Location: ./cars.php');
+    }
 ?>
 
 <!DOCTYPE html>
