@@ -115,19 +115,19 @@
 			          <h4>Login</h4>
 			        </div>
 			        <div class="modal-body" style="padding:40px 50px;">
-			          <form role="form">
+			          <form role="form" id="form-login" method="post" action="./scripts/login">
 			            <div class="form-group">
 			              <label for="email">Epost</label>
-			              <input type="text" class="form-control" id="email-login" placeholder="Email">
+			              <input type="text" name="email" class="form-control" placeholder="Epost">
 			            </div>
 			            <div class="form-group">
-			              <label for="psw">Passord</label>
-			              <input type="text" class="form-control" id="psw-login" placeholder="Passord">
+			              <label for="pwd">Passord</label>
+			              <input type="password" class="form-control" name="pwd" placeholder="Passord">
 			            </div>
 			            <div class="checkbox">
 			              <label><input type="checkbox" value="" checked>Husk meg</label>
 			            </div>
-			              <button type="submit" class="btn btn-success btn-block">Log inn</button>
+			              <button type="submit" name="btn-login" class="btn btn-success btn-block">Log inn</button>
 			          </form>
 			        </div>
 			        <div class="modal-footer">
