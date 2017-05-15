@@ -11,7 +11,6 @@
 
 		// connect
 		$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh");          
-		mysqli_select_db($con, "phpbok"); 
 
 		// sql query
 		$sql = "INSERT INTO espenkb.users";
@@ -19,15 +18,16 @@
 		$sql .= " VALUES ";
 		$sql .= " ('$first', '$last', '$adress', '$zip', '$city', '$phone', '$email', '$pwd')";
 
-		$resultat = mysqli_query($con, $sql); 
+		$res = mysqli_query($con, $sql); 
 
 		//close
 		mysqli_close($con);
 
-		if ($resultat) {
+		if ($res) {
+			session_start();
 			$_SESSION['email'] = $email;
 			$_SESSION['pwd'] = $pwd;
 			header('Location: ../cars.php');
-		}
+		} else echo "Noe gikk galt.";
 	}
 ?>

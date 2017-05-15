@@ -13,7 +13,7 @@ $(document).ready(function(){
         $("#login-modal").modal();
 	});
 
-    // validate form
+    // validate forms
     $('#form-reg').validate({ // initialize the plugin
         rules: {
             first: {
@@ -49,6 +49,20 @@ $(document).ready(function(){
                 email: true,
                 maxlength: 25
             },
+            pwd: {
+                required: true,
+                minlength: 8,
+                maxlength: 25
+            }
+        }
+    });
+    $('#form-login').validate({
+        rules: {
+            // email: {
+            //     required: true,
+            //     email: true,
+            //     maxlength: 25
+            // },
             pwd: {
                 required: true,
                 minlength: 8,
