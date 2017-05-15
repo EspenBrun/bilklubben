@@ -2,25 +2,8 @@ $(document).ready(function(){
 	// load footer and header
 	$('.navbar').load('navbar.html');
 	$('.footer').load('footer.html');
-
-	// Disable increment in number input by scrolling or arrow keys
-    // Disable scroll when focused on a number input.
-    $('form').on('focus', 'input[type=number]', function(e) {
-        $(this).on('wheel', function(e) {
-            e.preventDefault();
-        });
-    });
-    // Restore scroll on number inputs.
-    $('form').on('blur', 'input[type=number]', function(e) {
-        $(this).off('wheel');
-    });
-    // Disable up and down keys.
-    $('form').on('keydown', 'input[type=number]', function(e) {
-        if ( e.which == 38 || e.which == 40 )
-            e.preventDefault();
-    });  
      
-    // open log in modal
+    // open login modal
     $(".open-login-modal").click(function(e){
     	e.preventDefault();
         $("#login-modal").modal();
@@ -29,5 +12,49 @@ $(document).ready(function(){
 		e.preventDefault();
         $("#login-modal").modal();
 	});
+
+    // validate form
+    $('#form-reg').validate({ // initialize the plugin
+        rules: {
+            first: {
+                required: true,
+                maxlength: 25
+            },
+            last: {
+                required: true,
+                maxlength: 25
+            },
+            adress: {
+                required: true,
+                maxlength: 25
+            },
+            zip: { 
+                required: true,
+                maxlength: 4,
+                minlength: 4,
+                digits: true
+            },
+            city: {
+                required: true,
+                maxlength: 25
+            },
+            phone: {
+                required: true,
+                maxlength: 8,
+                minlength: 8,
+                digits: true
+            },
+            email: {
+                required: true,
+                email: true,
+                maxlength: 25
+            },
+            pwd: {
+                required: true,
+                minlength: 8,
+                maxlength: 25
+            }
+        }
+    });
 
 });

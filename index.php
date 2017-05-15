@@ -1,6 +1,10 @@
 <!-- Prosjekt Webutvikling 2 -->
 <!-- Bilklubben AS  -->
 <!-- Espen Kirkesæther Brun -->
+<?php
+    // Start sesjon -- må komme først
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="no">
@@ -29,53 +33,57 @@
 			<div class="row container-registration">
 				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 					<h2 class="text-center">Bli medlem</h2>
-					<form class="form-horizontal form-registration">
+					<form 
+						action="./scripts/reg_user.php" 
+						method="post" 
+						id="form-reg" 
+						class="form-horizontal form-registration">
 					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="first-name">Fornavn:</label>
 					    <div class="col-sm-10">
-					      <input type="text" class="form-control" id="firstName" placeholder="Fornavn">
+					      <input type="text" name="first" class="form-control" placeholder="Fornavn">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="last-name">Etternavn:</label>
 					    <div class="col-sm-10">
-					      <input type="text" class="form-control" id="lastName" placeholder="Etternavn">
+					      <input type="text" class="form-control" name="last" placeholder="Etternavn">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="adress">Adresse:</label>
 					    <div class="col-sm-10">
-					      <input type="text" class="form-control" id="adress" placeholder="Adresse">
+					      <input type="text" class="form-control" name="adress" placeholder="Adresse">
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label class="control-label col-sm-2" for="zip-code">Postnr:</label>
+					    <label class="control-label col-sm-2" for="zip">Postnr:</label>
 					    <div class="col-sm-10">
-					      <input type="number" class="form-control" id="zip-code" placeholder="Postnr">
+					      <input type="text" class="form-control" name="zip" placeholder="Postnr">
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label class="control-label col-sm-2" for="post-adress">Poststed:</label>
+					    <label class="control-label col-sm-2" for="city">Poststed:</label>
 					    <div class="col-sm-10">
-					      <input type="text" class="form-control" id="location" placeholder="Poststed">
+					      <input type="text" class="form-control" name="city" placeholder="Poststed">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="phone">Telefonr:</label>
 					    <div class="col-sm-10">
-					      <input type="number" class="form-control" id="phone" placeholder="Telefonnr">
+					      <input type="number" class="form-control" name="phone" placeholder="Telefonnr">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="email">Epost:</label>
 					    <div class="col-sm-10">
-					      <input type="email" class="form-control" id="email" placeholder="Epost">
+					      <input type="text" class="form-control" name="email" placeholder="Epost">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="pwd">Passord:</label>
 					    <div class="col-sm-10"> 
-					      <input type="password" class="form-control" id="pwd" placeholder="Passord">
+					      <input type="password" class="form-control" name="pwd" placeholder="Passord">
 					    </div>
 					  </div>
 					  <div class="form-group"> 
@@ -87,7 +95,7 @@
 					  </div>
 					  <div class="form-group"> 
 					    <div class="col-sm-offset-2 col-sm-10">
-					      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+					      <button type="submit" form="form-reg" name="btn-reg" class="btn btn-primary btn-block">Submit</button>
 					    </div>
 					  </div>
 					</form>
@@ -97,42 +105,41 @@
 				</div>
 			</div>
   
-    <!-- Login Modal -->
-	<div class="modal fade" id="login-modal" role="dialog">
-	    <div class="modal-dialog">
-	      <!-- Modal content-->
-	      <div class="modal-content">
-	        <div class="modal-header" style="padding:35px 50px;">
-	          <button type="button" class="close" data-dismiss="modal">&times;</button>
-	          <h4>Login</h4>
-	        </div>
-	        <div class="modal-body" style="padding:40px 50px;">
-	          <form role="form">
-	            <div class="form-group">
-	              <label for="email">Epost</label>
-	              <input type="text" class="form-control" id="email-login" placeholder="Email">
-	            </div>
-	            <div class="form-group">
-	              <label for="psw">Passord</label>
-	              <input type="text" class="form-control" id="psw-login" placeholder="Passord">
-	            </div>
-	            <div class="checkbox">
-	              <label><input type="checkbox" value="" checked>Husk meg</label>
-	            </div>
-	              <button type="submit" class="btn btn-success btn-block">Log inn</button>
-	          </form>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">Avbryt</button>
-	          <p><a href="#">Bli medlem</a></p>
-	          <p><a href="#">Glemt passord?</a></p>
-	        </div>
-	      </div>
-	      
-	    </div>
-	</div> 
-</div>
-
+		    <!-- Login Modal -->
+			<div class="modal fade" id="login-modal" role="dialog">
+			    <div class="modal-dialog">
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header" style="padding:35px 50px;">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4>Login</h4>
+			        </div>
+			        <div class="modal-body" style="padding:40px 50px;">
+			          <form role="form">
+			            <div class="form-group">
+			              <label for="email">Epost</label>
+			              <input type="text" class="form-control" id="email-login" placeholder="Email">
+			            </div>
+			            <div class="form-group">
+			              <label for="psw">Passord</label>
+			              <input type="text" class="form-control" id="psw-login" placeholder="Passord">
+			            </div>
+			            <div class="checkbox">
+			              <label><input type="checkbox" value="" checked>Husk meg</label>
+			            </div>
+			              <button type="submit" class="btn btn-success btn-block">Log inn</button>
+			          </form>
+			        </div>
+			        <div class="modal-footer">
+			          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">Avbryt</button>
+			          <p><a href="#">Bli medlem</a></p>
+			          <p><a href="#">Glemt passord?</a></p>
+			        </div>
+			      </div>
+			      
+			    </div>
+			</div> 
+		</sdiv>
 
 
 		<footer class="footer">
@@ -142,9 +149,12 @@
 	    <!-- Scripts -->
 		<!-- jQuery library -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	    <!-- jQuery form validation plugin and custom messages-->
+	    <script src="./scripts/jquery.validate.min.js"></script>
+	    <script src="./scripts/jquery.validate.msg.js"></script>
 		<!-- bootstrap Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<!-- hyttekatalog logic -->
+		<!-- index logic -->
 		<script type="text/javascript" language="javascript" src="index.js"></script>
 	</body>
 </html>	
