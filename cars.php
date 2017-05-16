@@ -4,7 +4,19 @@
 
 <?php
     session_start();
-    if (!isset($_SESSION['email']) && !isset($_SESSION['pwd'])) {
+    if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
+
+        //Steg 1: Tilkobling og valg av database
+		$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh");          
+		// mysqli_select_db($con, "phpbok"); 
+
+		//Steg 2: Kjør en SQL-spørring mot databasen
+	    $sql = "SELECT * FROM espenkb.cars";
+	    $res = mysqli_query($con, $sql); 
+
+	    
+    }
+    else {
 	    header('Location: ./index.php');
     }
 ?>
@@ -33,11 +45,22 @@
 				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 					<h2 class="text-center">Bilsiden</h2>
 					<?php
-						if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
-					        $email=$_SESSION['email'];
-					        $pwd=$_SESSION['pwd'];
-					        echo $email . $pwd;
-					    }
+					    while ( $row = mysqli_fetch_array($res) ) { 
+					        $brand = $row['brand'];
+					        $model = $row['model'];
+					        $type = $row['type'];
+					        $seats = $row['seats'];
+					        $baggage = $row['baggage'];
+					        $extras = $row['extras'];
+					        $points = $row['points'];
+					        $img1 = $row['img1'];
+					        $img2 = $row['img2'];
+					        $img3 = $row['img3']; ?>
+
+					        <p><?php echo $brand . $model; ?></p>
+					        <?php
+					    }  
+					    mysqli_close($con);
 				    ?>
 				</div>
 			</div>
