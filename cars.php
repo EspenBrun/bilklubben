@@ -5,16 +5,9 @@
 <?php
     session_start();
     if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
-
-        //Steg 1: Tilkobling og valg av database
 		$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh");          
-		// mysqli_select_db($con, "phpbok"); 
-
-		//Steg 2: Kjør en SQL-spørring mot databasen
 	    $sql = "SELECT * FROM espenkb.cars";
 	    $res = mysqli_query($con, $sql); 
-
-	    
     }
     else {
 	    header('Location: ./index.php');
