@@ -5,9 +5,11 @@
 <?php
     session_start();
     if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
-		$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh");          
+		$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh"); 
+		mysqli_set_charset($con, "utf8");
 	    $sql = "SELECT * FROM espenkb.cars";
 	    $res = mysqli_query($con, $sql); 
+
     }
     else {
 	    header('Location: ./index.php');
@@ -28,9 +30,9 @@
 		<title>Bilklubben AS</title>
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
       		<!-- load from js -->
-	    </nav>
+	    <!-- </nav> -->
 
 	    <!-- content -->
 		<div class="container container-main">
@@ -114,7 +116,7 @@
 									        </div>
 									    </div>
 									</div>
-									<h4><?php echo $points;?></h4>
+									<button class="btn btn-primary btn-block"><?php echo $points;?> points</button>
 
 								</div>
 							</div>
