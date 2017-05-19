@@ -22,6 +22,7 @@
 		<!-- bootstrap Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="./styles/bootstrap.min.css">
 		<link rel="stylesheet" href="./styles/sticky-footer-navbar.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
 		<link rel="stylesheet" type="text/css" href="./styles/styles.css">
 
 		<title>Bilklubben AS</title>
@@ -92,11 +93,30 @@
 									<p>Plass til <?php echo $baggage;?> kofferter</p>
 									<p>Ekstrautstyr: <?php echo $extras;?></p>
 									<h4><?php echo $points;?></h4>
+									
+								    <div class='col-md-5'>
+								        <div class="form-group">
+								            <div class='input-group date' id='datetimepicker6'>
+								                <input type='text' class="form-control" />
+								                <span class="input-group-addon">
+								                    <span class="glyphicon glyphicon-calendar"></span>
+								                </span>
+								            </div>
+								        </div>
+								    </div>
+								    <div class='col-md-5'>
+								        <div class="form-group">
+								            <div class='input-group date' id='datetimepicker7'>
+								                <input type='text' class="form-control" />
+								                <span class="input-group-addon">
+								                    <span class="glyphicon glyphicon-calendar"></span>
+								                </span>
+								            </div>
+								        </div>
+								    </div>
 								</div>
 							</div>
 							<hr/> 
-
-
 					        <?php
 					    }  
 					    mysqli_close($con);
@@ -113,8 +133,12 @@
 	    <!-- Scripts -->
 		<!-- jQuery library -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	    <!-- Moment.js. Date time formatting, required for the bootstrap calendar -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 		<!-- bootstrap Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- bootstrap-datetimepicker -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 		<!-- page logic -->
 		<script type="text/javascript" language="javascript" src="cars.js"></script>
 	</body>
