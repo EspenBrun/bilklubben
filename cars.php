@@ -37,7 +37,7 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="text-center">Bilsiden</h2>
+					<h2 class="text-center">Bilklubbens biler</h2>
 					<hr/>
 					<?php
 					    while ( $row = mysqli_fetch_array($res) ) {
@@ -92,28 +92,30 @@
 									<p><?php echo $seats;?> seter</p>
 									<p>Plass til <?php echo $baggage;?> kofferter</p>
 									<p>Ekstrautstyr: <?php echo $extras;?></p>
+									<div class="row">
+									    <div class='col-md-5'>
+									        <div class="form-group">
+									            <div class='input-group date' id='datetimepicker1'>
+									                <input type='text' class="form-control" placeholder="Fra dato" />
+									                <span class="input-group-addon">
+									                    <span class="glyphicon glyphicon-calendar"></span>
+									                </span>
+									            </div>
+									        </div>
+									    </div>
+									    <div class='col-md-5'>
+									        <div class="form-group">
+									            <div class='input-group date' id='datetimepicker2'>
+									                <input type='text' class="form-control" placeholder="Til dato" />
+									                <span class="input-group-addon">
+									                    <span class="glyphicon glyphicon-calendar"></span>
+									                </span>
+									            </div>
+									        </div>
+									    </div>
+									</div>
 									<h4><?php echo $points;?></h4>
-									
-								    <div class='col-md-5'>
-								        <div class="form-group">
-								            <div class='input-group date' id='datetimepicker6'>
-								                <input type='text' class="form-control" />
-								                <span class="input-group-addon">
-								                    <span class="glyphicon glyphicon-calendar"></span>
-								                </span>
-								            </div>
-								        </div>
-								    </div>
-								    <div class='col-md-5'>
-								        <div class="form-group">
-								            <div class='input-group date' id='datetimepicker7'>
-								                <input type='text' class="form-control" />
-								                <span class="input-group-addon">
-								                    <span class="glyphicon glyphicon-calendar"></span>
-								                </span>
-								            </div>
-								        </div>
-								    </div>
+
 								</div>
 							</div>
 							<hr/> 
