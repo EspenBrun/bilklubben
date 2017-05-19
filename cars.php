@@ -94,28 +94,34 @@
 									<p>Plass til <?php echo $baggage;?> kofferter</p>
 									<p>Ekstrautstyr: <?php echo $extras;?></p>
 									<div class="row">
-									    <div class='col-md-5'>
-									        <div class="form-group">
-									            <div class='input-group date' id='datetimepicker1'>
-									                <input type='text' class="form-control" placeholder="Fra dato" />
-									                <span class="input-group-addon">
-									                    <span class="glyphicon glyphicon-calendar"></span>
-									                </span>
-									            </div>
-									        </div>
-									    </div>
-									    <div class='col-md-5'>
-									        <div class="form-group">
-									            <div class='input-group date' id='datetimepicker2'>
-									                <input type='text' class="form-control" placeholder="Til dato" />
-									                <span class="input-group-addon">
-									                    <span class="glyphicon glyphicon-calendar"></span>
-									                </span>
-									            </div>
-									        </div>
-									    </div>
+										<form 
+										action="./scripts/order.php" 
+										method="post" 
+										id="form-order" >
+										    <div class='col-md-5'>
+										        <div class="form-group">
+										            <div class='input-group date' id='datetimepicker1'>
+										                <input type='text' name="from" class="form-control" placeholder="Fra dato" />
+										                <span class="input-group-addon">
+										                    <span class="glyphicon glyphicon-calendar"></span>
+										                </span>
+										            </div>
+										        </div>
+										    </div>
+										    <div class='col-md-5'>
+										        <div class="form-group">
+										            <div class='input-group date' id='datetimepicker2'>
+										                <input type='text' name="to" class="form-control" placeholder="Til dato" />
+										                <span class="input-group-addon">
+										                    <span class="glyphicon glyphicon-calendar"></span>
+										                </span>
+										            </div>
+										        </div>
+										    </div>
+										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points;?> points</button>
+									    </form>
 									</div>
-									<button class="btn btn-primary btn-block"><?php echo $points;?> points</button>
+									
 
 								</div>
 							</div>
@@ -136,6 +142,9 @@
 	    <!-- Scripts -->
 		<!-- jQuery library -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	    <!-- jQuery form validation plugin and custom messages-->
+	    <script src="./scripts/jquery.validate.min.js"></script>
+	    <script src="./scripts/jquery.validate.msg.js"></script>
 	    <!-- Moment.js. Date time formatting, required for the bootstrap calendar -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 		<!-- bootstrap Latest compiled JavaScript -->
