@@ -8,6 +8,7 @@ $(function () {
     });
     $("#datetimepicker1").on("dp.change", function (e) {
         $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+        console.log(e.date);
     });
     $("#datetimepicker2").on("dp.change", function (e) {
         $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
@@ -16,7 +17,7 @@ $(function () {
 
 $(document).ready(function(){
 	// load footer and header
-	// $('.navbar').load('navbar.html');
+	$('.navbar').load('navbar.html');
 	$('.footer').load('footer.html');
      
 });
