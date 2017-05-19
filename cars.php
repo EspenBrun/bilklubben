@@ -32,13 +32,15 @@
 	    </nav>
 
 	    <!-- content -->
-		<div class="container-fluid container-main">
+		<div class="container container-main">
 
 			<div class="row">
-				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+				<div class="col-xs-12">
 					<h2 class="text-center">Bilsiden</h2>
+					<hr/>
 					<?php
-					    while ( $row = mysqli_fetch_array($res) ) { 
+					    while ( $row = mysqli_fetch_array($res) ) {
+					    	$id = $row['id'];
 					        $brand = $row['brand'];
 					        $model = $row['model'];
 					        $type = $row['type'];
@@ -50,7 +52,51 @@
 					        $img2 = $row['img2'];
 					        $img3 = $row['img3']; ?>
 
-					        <p><?php echo $brand . $model; ?></p>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6">
+									<div id="myCarousel<?php echo $id;?>" class="carousel slide" data-ride="carousel">
+									<!-- Carousel indicators -->
+										<ol class="carousel-indicators">
+											<li data-target="#myCarousel<?php echo $id;?>" data-slide-to="0" class="active"></li>
+											<li data-target="#myCarousel<?php echo $id;?>" data-slide-to="1" class="active"></li>
+											<li data-target="#myCarousel<?php echo $id;?>" data-slide-to="2" class="active"></li>
+										</ol>
+										<!-- Wrapper for slides -->
+										<div class="carousel-inner">
+											<!-- Slides -->
+											<div class="item active">
+												<img src="./res/<?php echo $img1;?>" alt="Bilbilde 1">
+											</div>
+											<div class="item">
+												<img src="./res/<?php echo $img2;?>" alt="Bilbilde 2">
+											</div>
+											<div class="item">
+												<img src="./res/<?php echo $img3;?>" alt="Bilbilde 3">
+											</div>
+										</div>
+										<!-- Left and right controls -->
+										<a class="left carousel-control" href="#myCarousel<?php echo $id;?>" data-slide="prev">
+											<span class="glyphicon glyphicon-chevron-left""></span>
+											<span class="sr-only">Previous</span>
+										</a>
+										<a class="right carousel-control" href="#myCarousel<?php echo $id;?>" data-slide="next">
+											<span class="glyphicon glyphicon-chevron-right"></span>
+											<span class="sr-only">Next</span>
+										</a>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6 jumbotron cabin-list-description match-parent">
+									<h3><?php echo $brand . " " . $model;?></h3>
+									<p><?php echo $type;?></p>
+									<p><?php echo $seats;?> seter</p>
+									<p>Plass til <?php echo $baggage;?> kofferter</p>
+									<p>Ekstrautstyr: <?php echo $extras;?></p>
+									<h4><?php echo $points;?></h4>
+								</div>
+							</div>
+							<hr/> 
+
+
 					        <?php
 					    }  
 					    mysqli_close($con);
