@@ -22,7 +22,7 @@
 		<!-- bootstrap Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="./styles/bootstrap.min.css">
 		<link rel="stylesheet" href="./styles/sticky-footer-navbar.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="./styles/bootstrap-datetimepicker.css" />
 		<link rel="stylesheet" type="text/css" href="./styles/styles.css">
 
 		<title>Bilklubben AS</title>

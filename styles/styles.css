@@ -1,18 +1,3 @@
-/*Styles*/
-
-/*.container-main {
-  padding-top: 60px;
-}
-*/
-/*.container-footer {
-  background-color: teal;
-  color: white;
-  padding: 0px;
-}*/
-
-/*
-* Landing page
-*/
 .banner {
   min-height: 80vh;
   background-image: url(../res/bilklubben_banner.jpg);
@@ -46,10 +31,20 @@
 }
 
 /*
-* General
+* Customized datetimepicker
 */
+/*.bootstrap-datetimepicker-widget table td.today:before {
+  border-bottom-color: #2196F3;
+}
 
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background-color: #2196F3;
+}
 
+.bootstrap-datetimepicker-widget table td span.active {
+  background-color: #2196F3;
+}*/
 
 /*.footer {
   margin-top: 60px;
