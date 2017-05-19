@@ -101,7 +101,7 @@
 										    <div class='col-md-5'>
 										        <div class="form-group">
 										            <div class='input-group date' id='datetimepicker1'>
-										                <input type='text' name="from" class="form-control" placeholder="Fra dato" />
+										                <input type='text' name="date_from" class="form-control" placeholder="Fra dato" />
 										                <span class="input-group-addon">
 										                    <span class="glyphicon glyphicon-calendar"></span>
 										                </span>
@@ -111,14 +111,21 @@
 										    <div class='col-md-5'>
 										        <div class="form-group">
 										            <div class='input-group date' id='datetimepicker2'>
-										                <input type='text' name="to" class="form-control" placeholder="Til dato" />
+										                <input type='text' name="date_to" class="form-control" placeholder="Til dato" />
 										                <span class="input-group-addon">
 										                    <span class="glyphicon glyphicon-calendar"></span>
 										                </span>
 										            </div>
 										        </div>
 										    </div>
-										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points;?> points</button>
+										    <input type='hidden' name="car-id" class="form-control" value="<?php echo $id;?>"/>
+										    <input type='hidden' name="brand" class="form-control" value="<?php echo $brand;?>"/>
+										    <input type='hidden' name="model" class="form-control" value="<?php echo $model;?>"/>
+										    <input type="hidden" name="days" class="form-control" value=""/>
+										    <input type='hidden' name="points" class="form-control" value="<?php echo $points;?>"/>
+
+
+										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points;?> points/day</button>
 									    </form>
 									</div>
 									

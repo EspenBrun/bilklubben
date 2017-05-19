@@ -1,29 +1,38 @@
 <?php
 	if (isset($_POST['btn-order'])){
-        $from = $_POST['from'];
-        $to = $_POST['to'];
-        echo $from . " " . $to;
+        $car_id = $_POST['car-id'];
+        $date_from = $_POST['date_from'];
+        $date_to = $_POST['date_to'];
+        $days = $_POST['days'];
+        $brand = $_POST['brand'];
+        $model = $_POST['model'];
+        $points = $_POST['points'];
+        $points_charged = $points * $days;
+        $made_on = date("Y-m-d"); // YYYY-MM-DD
 
+        session_start();
+	    if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
+	    	// connect
+	    	$email = $_SESSION['email'];
+			$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh");          
 
-		// // connect
-		// $con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh");          
+			// sql query
+			$sql = "INSERT INTO espenkb.reservations";
+			$sql .= " (email, car_id, made_on, date_from, date_to, points_charged)";
+			$sql .= " VALUES ";
+			$sql .= " ('$email', '$car_id', '$made_on', '$date_from', '$date_to', '$points_charged')";
+			echo $sql;
 
-		// // sql query
-		// $sql = "INSERT INTO espenkb.users";
-		// $sql .= " (first, last, adress, zip, city, phone, email, pwd)";
-		// $sql .= " VALUES ";
-		// $sql .= " ('$first', '$last', '$adress', '$zip', '$city', '$phone', '$email', '$pwd')";
+			$res = mysqli_query($con, $sql); 
 
-		// $res = mysqli_query($con, $sql); 
+			//close
+			mysqli_close($con);
 
-		// //close
-		// mysqli_close($con);
-
-		// if ($res) {
-		// 	session_start();
-		// 	$_SESSION['email'] = $email;
-		// 	$_SESSION['pwd'] = $pwd;
-		// 	header('Location: ../cars.php');
-		// } else echo "Noe gikk galt.";
-	}
+			if ($res) {
+		        echo "Takk for din bestilling";
+			} else echo "Noe gikk galt.";
+	    }
+	} else {
+	    header('Location: ./index.php');
+    }
 ?>
