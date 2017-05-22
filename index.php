@@ -36,12 +36,6 @@
 			    </div>
 			</div>
 
-			<div class="row container-info">
-				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
-				<p class="info">Bilklubben AS er en bilutleietjeneste som fungerer på abonnentsbasis. Du betaler 399,- i måneden som gir deg 100 poeng. Poengene kan brukes så fritt i løpet på å leie bil - når det måtte passe deg best.</p>
-				</div>
-			</div>
-
 			<div class="row container-registration">
 				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 					<h2 class="text-center">Bli medlem</h2>

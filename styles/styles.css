@@ -5,11 +5,13 @@
   background-size: cover;
   background-position: center left;
 }
+
 .banner-txt {
 	color: white;
 	padding-top: 20vh;
 	font-size: 5em;
 }
+
 .container-info {
   padding-top: 100px;
 }
