@@ -90,6 +90,10 @@
 					<div class="col-xs-12 col-sm-6">
 						<img src="./res/<?php echo $img;?>"/>
 					</div>
+					<div class="col-xs-4 col-xs-offset-4 text-center">
+						<h3>Her kan du hente bilen din</h3>
+						<div id="map" style="width:400px;height:300px;"></div>
+					</div>
 				</div>
 			</div>
 		</div>
