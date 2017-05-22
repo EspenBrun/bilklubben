@@ -141,8 +141,8 @@
 
 										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
 									    </form>
-									    <div class="container-message">
-									    	<p class="alert alert-info" id="msg-<?php echo $id;?>">Du har ikke nok poeng for denne bestillingen.</p>
+									    <div id="msg-<?php echo $id;?>" class="alert alert-warning text-center">
+									    	Du har ikke nok poeng for denne bestillingen.
 									    </div>
 									</div>
 									
