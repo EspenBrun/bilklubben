@@ -99,7 +99,7 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-xs-12 col-sm-6 jumbotron cabin-list-description match-parent">
+								<div class="col-xs-12 col-sm-6 jumbotron match-parent">
 									<h3><?php echo $brand . " " . $model;?></h3>
 									<p><?php echo $type;?></p>
 									<p><?php echo $seats;?> seter</p>

@@ -18,6 +18,7 @@
         $model = $_POST['model'];
         $points_car = $_POST['points-car'];
         $points_user = $_POST['points-user'];
+        $first = $_POST['first'];
         $points_charged = $points_car * $days;
         $points_left = $points_user - $points_charged;
         $made_on = date("Y-m-d"); // YYYY-MM-DD
@@ -65,9 +66,15 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Takk for din bestilling, <?php echo $email;?></h2>
-					<h3>Her kan du se Bilklubbens biler</h3>
+					<h2>Takk for din bestilling <?php echo $first;?></h2>
 					<hr/>
+					<h3>Du har bestilt</h3>
+					<div class="jumbotron">
+						<p><b><?php echo $brand . " " . $model . ".";?></b></p>
+						<p>Fra <?php echo $date_from?> til <?php echo $date_to;?>.</p>
+						<p>Du har brukt <?php echo $points_charged;?>.</p>
+						<p>Du har igjen <?php echo $points_left;?> poeng</p>
+					</div>
 					
 				</div>
 			</div>
