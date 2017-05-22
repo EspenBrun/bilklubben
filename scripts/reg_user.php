@@ -30,6 +30,8 @@
 			$_SESSION['email'] = $email;
 			$_SESSION['pwd'] = $pwd;
 			header('Location: ../cars.php');
+			mysqli_close($res);
+
 		} else echo "Noe gikk galt.";
 	}
 ?>

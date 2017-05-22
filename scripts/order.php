@@ -23,13 +23,13 @@
 			$sql .= " ('$email', '$car_id', '$made_on', '$date_from', '$date_to', '$points_charged')";
 			echo $sql;
 
-			$res = mysqli_query($con, $sql); 
-
-			//close
+			$res = mysqli_query($con, $sql);
+			//close connection
 			mysqli_close($con);
 
 			if ($res) {
 		        echo "Takk for din bestilling";
+				mysqli_close($res);
 			} else echo "Noe gikk galt.";
 	    }
 	} else {

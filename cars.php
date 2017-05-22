@@ -7,8 +7,10 @@
     if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
 		$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh"); 
 		mysqli_set_charset($con, "utf8");
-	    $sql = "SELECT * FROM espenkb.cars";
-	    $res = mysqli_query($con, $sql); 
+	    $sql_cars = "SELECT * FROM espenkb.cars";
+	    $res_cars = mysqli_query($con, $sql_cars);
+	    mysqli_close($con);
+	    
     }
     else {
 	    header('Location: ./index.php');
@@ -41,7 +43,7 @@
 					<h2 class="text-center">Bilklubbens biler</h2>
 					<hr/>
 					<?php
-					    while ( $row = mysqli_fetch_array($res) ) {
+					    while ( $row = mysqli_fetch_array($res_cars) ) {
 					    	$id = $row['id'];
 					        $brand = $row['brand'];
 					        $model = $row['model'];
@@ -134,8 +136,8 @@
 							</div>
 							<hr/> 
 					        <?php
-					    }  
-					    mysqli_close($con);
+					    }
+					    mysqli_close($res);
 				    ?>
 				</div>
 			</div>
