@@ -30,7 +30,6 @@ $(document).ready(function(){
     var msg = "Du har ikke nok poeng for denne bestillingen.";
     var id;
     var pointsCar;
-    var enoughPoints = true;
 
     $(".date-from").on("dp.change", function (e) {
         // get the id number from the id string
@@ -46,14 +45,15 @@ $(document).ready(function(){
 	        $("[name=days]").val(days);
             pointsCar = $("[name = 'points-car']").val();
             pointsUser = $("[name = 'points-user']").val();
+            console.log(days * pointsCar);
 
             if (days * pointsCar > pointsUser) {
                 $('#msg-' + id).show();
-                enoughPoints = false;
+                $('#btn-order-' + id).prop('disabled', true);
             }
             else {
                 $('#msg-' + id).hide();
-                enoughPoints = true;
+                $('#btn-order-' + id).prop('disabled', false);
             }
         }
     });
@@ -68,14 +68,14 @@ $(document).ready(function(){
 	        $("[name=days]").val(days);
             pointsCar = $("[name = 'points-car']").val();
             pointsUser = $("[name = 'points-user']").val();
-
+            console.log(days * pointsCar);
             if (days * pointsCar > pointsUser) {
                 $('#msg-' + id).show();
-                enoughPoints = false;
+                $('#btn-order-' + id).prop('disabled', true);
             }
             else {
                 $('#msg-' + id).hide();
-                enoughPoints = true;
+                $('#btn-order-' + id).prop('disabled', false);
             }
         }
     });

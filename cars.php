@@ -138,7 +138,7 @@
 										    <input type='hidden' name="points-user" class="form-control" value="<?php echo $points_user;?>"/>
 
 
-										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
+										    <button id="btn-order-<?php echo $id;?>" type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
 									    </form>
 									    <div id="msg-<?php echo $id;?>" class="alert alert-warning text-center">
 									    	Du har ikke nok poeng for denne bestillingen.
