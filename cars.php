@@ -107,13 +107,14 @@
 									<p>Ekstrautstyr: <?php echo $extras;?></p>
 									<div class="row">
 										<form 
-										action="./order.php" 
+										action="./order.php"
+										class="form-order"
 										method="post" 
-										id="form-order" >
+										id="form-order-<?php echo $id;?>" >
 										    <div class='col-md-5'>
 										        <div class="form-group">
 										            <div class='input-group date date-from' id='date-time-picker-from-<?php echo $id;?>'>
-										                <input type='text' name="date_from" class="form-control" placeholder="Fra dato" />
+										                <input type='text' name="date_from-<?php echo $id;?>" class="form-control input_date_from" placeholder="Fra dato" />
 										                <span class="input-group-addon">
 										                    <span class="glyphicon glyphicon-calendar"></span>
 										                </span>
@@ -123,23 +124,23 @@
 										    <div class='col-md-5'>
 										        <div class="form-group">
 										            <div class='input-group date date-to' id='date-time-picker-to-<?php echo $id;?>'>
-										                <input type='text' name="date_to" class="form-control" placeholder="Til dato" />
+										                <input type='text' name="date_to-<?php echo $id;?>" class="form-control input_date_to" placeholder="Til dato" />
 										                <span class="input-group-addon">
 										                    <span class="glyphicon glyphicon-calendar"></span>
 										                </span>
 										            </div>
 										        </div>
 										    </div>
-										    <input type='hidden' name="car-id" class="form-control" value="<?php echo $id;?>"/>
-										    <input type='hidden' name="brand" class="form-control" value="<?php echo $brand;?>"/>
-										    <input type='hidden' name="model" class="form-control" value="<?php echo $model;?>"/>
-										    <input type="hidden" name="days" class="form-control" value=""/>
-										    <input type='hidden' name="points-car" class="form-control" value="<?php echo $points_car;?>"/>
-										    <input type='hidden' name="points-user" class="form-control" value="<?php echo $points_user;?>"/>
-										    <input type='hidden' name="first" class="form-control" value="<?php echo $first;?>"/>
-										    <input type='hidden' name="img" class="form-control" value="<?php echo $img1;?>"/>
+										    <input type='hidden' name="car-id-<?php echo $id;?>" class="form-control" value="<?php echo $id;?>"/>
+										    <input type='hidden' name="brand-<?php echo $id;?>" class="form-control" value="<?php echo $brand;?>"/>
+										    <input type='hidden' name="model-<?php echo $id;?>" class="form-control" value="<?php echo $model;?>"/>
+										    <input type="hidden" name="days-<?php echo $id;?>" class="form-control" value=""/>
+										    <input type='hidden' name="points-car-<?php echo $id;?>" class="form-control" value="<?php echo $points_car;?>"/>
+										    <input type='hidden' name="points-user-<?php echo $id;?>" class="form-control" value="<?php echo $points_user;?>"/>
+										    <input type='hidden' name="first-<?php echo $id;?>" class="form-control" value="<?php echo $first;?>"/>
+										    <input type='hidden' name="img-<?php echo $id;?>" class="form-control" value="<?php echo $img1;?>"/>
 					
-										    <button id="btn-order-<?php echo $id;?>" type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
+										    <button id="btn-order-<?php echo $id;?>" type="submit" form="form-order-<?php echo $id;?>" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
 									    </form>
 									    <div id="msg-<?php echo $id;?>" class="alert alert-warning text-center">
 									    	Du har ikke nok poeng for denne bestillingen.

@@ -4,22 +4,25 @@
 
 <?php
     session_start();
-    if (!isset($_SESSION['email']) || !isset($_SESSION['pwd']) || !isset($_POST['btn-order'])) {
+    if (!isset($_SESSION['email']) || !isset($_SESSION['pwd']) || !isset($_POST)) {
 	    header('Location: ./index.php');
     }
-    elseif (isset($_SESSION['email']) && isset($_SESSION['pwd']) && isset($_POST['btn-order'])) {
-
+    elseif (isset($_SESSION['email']) && isset($_SESSION['pwd']) && isset($_POST)) {
     	$email = $_SESSION['email'];
-    	$car_id = $_POST['car-id'];
-        $date_from = $_POST['date_from'];
-        $date_to = $_POST['date_to'];
-        $days = $_POST['days'];
-        $brand = $_POST['brand'];
-        $model = $_POST['model'];
-        $points_car = $_POST['points-car'];
-        $points_user = $_POST['points-user'];
-        $first = $_POST['first'];
-        $img = $_POST['img'];
+    	// jquery form validation need unique names on input, so cant easily acess the right key here
+    	// workaround: make $_POST an array and just assing the values by index instead of key
+		$post = array_values($_POST);
+        $date_from = $post[0];
+        $date_to = $post[1];
+    	$car_id = $post[2];
+        $brand = $post[3];
+        $model = $post[4];
+        $days = $post[5];
+        $points_car = $post[6];
+        $points_user = $post[7];
+        $first = $post[8];
+        $img = $post[9];
+
         $points_charged = $points_car * $days;
         $points_left = $points_user - $points_charged;
         $made_on = date("Y-m-d"); // YYYY-MM-DD
