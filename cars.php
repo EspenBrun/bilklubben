@@ -49,7 +49,7 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Velkommen <?php echo $first;?></h2>
+					<h2>Velkommen <?php echo $first;?>, du har <?php echo $points_user;?> poeng.</h2>
 					<h3>Her kan du se Bilklubbens biler</h3>
 					<hr/>
 					<?php
