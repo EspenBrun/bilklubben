@@ -125,7 +125,7 @@
 										    <input type='hidden' name="points" class="form-control" value="<?php echo $points;?>"/>
 
 
-										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points;?> points/day</button>
+										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points;?> poeng/dag</button>
 									    </form>
 									</div>
 									
