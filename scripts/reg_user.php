@@ -8,15 +8,17 @@
         $phone = $_POST['phone'];
         $email = $_POST['email'];
         $pwd = $_POST['pwd'];
+        $card = $_POST['card'];
+        $points = 100;
 
 		// connect
 		$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh");          
 
 		// sql query
 		$sql = "INSERT INTO espenkb.users";
-		$sql .= " (first, last, adress, zip, city, phone, email, pwd)";
+		$sql .= " (first, last, adress, zip, city, phone, email, pwd, credit_card, points)";
 		$sql .= " VALUES ";
-		$sql .= " ('$first', '$last', '$adress', '$zip', '$city', '$phone', '$email', '$pwd')";
+		$sql .= " ('$first', '$last', '$adress', '$zip', '$city', '$phone', '$email', '$pwd', '$card', '$points')";
 
 		$res = mysqli_query($con, $sql); 
 

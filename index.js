@@ -44,6 +44,12 @@ $(document).ready(function(){
                 minlength: 8,
                 digits: true
             },
+            card: {
+                required: true,
+                maxlength: 16,
+                minlength: 16,
+                digits: true
+            },
             email: {
                 required: true,
                 email: true,

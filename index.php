@@ -78,6 +78,12 @@
 					    </div>
 					  </div>
 					  <div class="form-group">
+					    <label class="control-label col-sm-2" for="phone">Kortnummer:</label>
+					    <div class="col-sm-10">
+					      <input type="number" class="form-control" name="card" placeholder="Kortnummer">
+					    </div>
+					  </div>
+					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="email">Epost:</label>
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" name="email" placeholder="Epost">
