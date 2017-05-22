@@ -135,14 +135,14 @@
 										    <input type='hidden' name="brand" class="form-control" value="<?php echo $brand;?>"/>
 										    <input type='hidden' name="model" class="form-control" value="<?php echo $model;?>"/>
 										    <input type="hidden" name="days" class="form-control" value=""/>
-										    <input type='hidden' name="points_car" class="form-control" value="<?php echo $points_car;?>"/>
-										    <input type='hidden' name="points_user" class="form-control" value="<?php echo $points_user;?>"/>
+										    <input type='hidden' name="points-car" class="form-control" value="<?php echo $points_car;?>"/>
+										    <input type='hidden' name="points-user" class="form-control" value="<?php echo $points_user;?>"/>
 
 
 										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
 									    </form>
 									    <div class="container-message">
-									    	<p id="msg<?php echo $id;?>"></p>
+									    	<p class="alert alert-info" id="msg-<?php echo $id;?>">Du har ikke nok poeng for denne bestillingen.</p>
 									    </div>
 									</div>
 									
