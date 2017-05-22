@@ -49,9 +49,8 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="text-center">Velkommen, <?php echo $name . $points_user;?></h2>
+					<h2 class="text-center">Velkommen, <?php echo $name;?></h2>
 					<h3>Her kan du se Bilklubbens biler</h3>
-					<?php echo $sql_users;?>
 					<hr/>
 					<?php
 					    while ( $row = mysqli_fetch_array($res_cars) ) {
