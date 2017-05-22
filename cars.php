@@ -16,7 +16,7 @@
 	    $res_users = mysqli_query($con, $sql_users);
 		$row_users = mysqli_fetch_array($res_users);
 		$points_user = $row_users['points'];
-		$name = $row_users['first'];
+		$first = $row_users['first'];
 
 	    mysqli_close($con);
 
@@ -49,7 +49,7 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Velkommen, <?php echo $name;?></h2>
+					<h2>Velkommen <?php echo $first;?></h2>
 					<h3>Her kan du se Bilklubbens biler</h3>
 					<hr/>
 					<?php
@@ -107,7 +107,7 @@
 									<p>Ekstrautstyr: <?php echo $extras;?></p>
 									<div class="row">
 										<form 
-										action="./scripts/order.php" 
+										action="./order.php" 
 										method="post" 
 										id="form-order" >
 										    <div class='col-md-5'>
@@ -136,6 +136,7 @@
 										    <input type="hidden" name="days" class="form-control" value=""/>
 										    <input type='hidden' name="points-car" class="form-control" value="<?php echo $points_car;?>"/>
 										    <input type='hidden' name="points-user" class="form-control" value="<?php echo $points_user;?>"/>
+										    <input type='hidden' name="first" class="form-control" value="<?php echo $first;?>"/>
 
 
 										    <button id="btn-order-<?php echo $id;?>" type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
