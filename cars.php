@@ -139,6 +139,7 @@
 										    <input type='hidden' name="points-user-<?php echo $id;?>" class="form-control" value="<?php echo $points_user;?>"/>
 										    <input type='hidden' name="first-<?php echo $id;?>" class="form-control" value="<?php echo $first;?>"/>
 										    <input type='hidden' name="img-<?php echo $id;?>" class="form-control" value="<?php echo $img1;?>"/>
+										    <input type='hidden' name="sent" class="form-control" value="sent"/>
 					
 										    <button id="btn-order-<?php echo $id;?>" type="submit" form="form-order-<?php echo $id;?>" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
 									    </form>

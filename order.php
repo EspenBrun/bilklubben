@@ -4,10 +4,10 @@
 
 <?php
     session_start();
-    if (!isset($_SESSION['email']) || !isset($_SESSION['pwd']) || !isset($_POST)) {
+    if (!isset($_SESSION['email']) || !isset($_SESSION['pwd']) || !isset($_POST['sent'])) {
 	    header('Location: ./index.php');
     }
-    elseif (isset($_SESSION['email']) && isset($_SESSION['pwd']) && isset($_POST)) {
+    elseif (isset($_SESSION['email']) && isset($_SESSION['pwd']) && isset($_POST['sent'])) {
     	$email = $_SESSION['email'];
     	// jquery form validation need unique names on input, so cant easily acess the right key here
     	// workaround: make $_POST an array and just assing the values by index instead of key
