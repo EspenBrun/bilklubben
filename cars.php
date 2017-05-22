@@ -5,10 +5,17 @@
 <?php
     session_start();
     if (isset($_SESSION['email']) && isset($_SESSION['pwd'])) {
+    	$email = $_SESSION['email'];
 		$con = mysqli_connect("mysql.stud.iie.ntnu.no", "espenkb", "nN3MZOCh"); 
 		mysqli_set_charset($con, "utf8");
-	    $sql_cars = "SELECT * FROM espenkb.cars";
+		// get the cars
+	    $sql_cars = "SELECT * FROM espenkb.cars;";
 	    $res_cars = mysqli_query($con, $sql_cars);
+	    // get user points
+	    $sql_users = "SELECT points FROM espenkb.users WHERE email = '$email';";
+	    $res_users = mysqli_query($con, $sql_users);
+		$points = mysqli_fetch_array($res_users)['points'];
+
 	    mysqli_close($con);
 
     }
@@ -40,7 +47,8 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="text-center">Bilklubbens biler</h2>
+					<h2 class="text-center">Bilklubbens biler<?php echo $points; ?></h2>
+					<?php echo $sql_users;?>
 					<hr/>
 					<?php
 					    while ( $row = mysqli_fetch_array($res_cars) ) {
@@ -138,6 +146,8 @@
 					        <?php
 					    }
 					    mysqli_free_result($res_cars);
+					    
+
 				    ?>
 				</div>
 			</div>
