@@ -12,9 +12,11 @@
 	    $sql_cars = "SELECT * FROM espenkb.cars;";
 	    $res_cars = mysqli_query($con, $sql_cars);
 	    // get user points
-	    $sql_users = "SELECT points FROM espenkb.users WHERE email = '$email';";
+	    $sql_users = "SELECT first, points FROM espenkb.users WHERE email = '$email';";
 	    $res_users = mysqli_query($con, $sql_users);
-		$points = mysqli_fetch_array($res_users)['points'];
+		$row_users = mysqli_fetch_array($res_users);
+		$points_user = $row_users['points'];
+		$name = $row_users['first'];
 
 	    mysqli_close($con);
 
@@ -47,7 +49,8 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="text-center">Bilklubbens biler<?php echo $points; ?></h2>
+					<h2 class="text-center">Velkommen, <?php echo $name . $points_user;?></h2>
+					<h3>Her kan du se Bilklubbens biler</h3>
 					<?php echo $sql_users;?>
 					<hr/>
 					<?php
@@ -59,7 +62,7 @@
 					        $seats = $row['seats'];
 					        $baggage = $row['baggage'];
 					        $extras = $row['extras'];
-					        $points = $row['points'];
+					        $points_car = $row['points'];
 					        $img1 = $row['img1'];
 					        $img2 = $row['img2'];
 					        $img3 = $row['img3']; ?>
@@ -110,7 +113,7 @@
 										id="form-order" >
 										    <div class='col-md-5'>
 										        <div class="form-group">
-										            <div class='input-group date' id='datetimepicker1'>
+										            <div class='input-group date date-from' id='date-time-picker-from-<?php echo $id;?>'>
 										                <input type='text' name="date_from" class="form-control" placeholder="Fra dato" />
 										                <span class="input-group-addon">
 										                    <span class="glyphicon glyphicon-calendar"></span>
@@ -120,7 +123,7 @@
 										    </div>
 										    <div class='col-md-5'>
 										        <div class="form-group">
-										            <div class='input-group date' id='datetimepicker2'>
+										            <div class='input-group date date-to' id='date-time-picker-to-<?php echo $id;?>'>
 										                <input type='text' name="date_to" class="form-control" placeholder="Til dato" />
 										                <span class="input-group-addon">
 										                    <span class="glyphicon glyphicon-calendar"></span>
@@ -132,11 +135,15 @@
 										    <input type='hidden' name="brand" class="form-control" value="<?php echo $brand;?>"/>
 										    <input type='hidden' name="model" class="form-control" value="<?php echo $model;?>"/>
 										    <input type="hidden" name="days" class="form-control" value=""/>
-										    <input type='hidden' name="points" class="form-control" value="<?php echo $points;?>"/>
+										    <input type='hidden' name="points_car" class="form-control" value="<?php echo $points_car;?>"/>
+										    <input type='hidden' name="points_user" class="form-control" value="<?php echo $points_user;?>"/>
 
 
-										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points;?> poeng/dag</button>
+										    <button type="submit" form="form-order" name="btn-order" class="btn btn-primary btn-block"><?php echo $points_car;?> poeng/dag</button>
 									    </form>
+									    <div class="container-message">
+									    	<p id="msg<?php echo $id;?>"></p>
+									    </div>
 									</div>
 									
 
