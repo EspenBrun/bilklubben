@@ -30,7 +30,16 @@
 			<div class="row banner">
 				<div class="col-xs-12">
 		   			<h1 class="banner-txt text-center">Velkommen til Bilklubben AS</h1>
+		   			<div class="col-xs-4 col-xs-offset-4 text-center container-info"> 
+		   				<p class="info">Bilklubben AS er en bilutleietjeneste som fungerer på abonnentsbasis. Du betaler 399,- i måneden som gir deg 100 poeng. Poengene kan brukes så fritt i løpet på å leie bil - når det måtte passe deg best.</p>
+		   			</div>
 			    </div>
+			</div>
+
+			<div class="row container-info">
+				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+				<p class="info">Bilklubben AS er en bilutleietjeneste som fungerer på abonnentsbasis. Du betaler 399,- i måneden som gir deg 100 poeng. Poengene kan brukes så fritt i løpet på å leie bil - når det måtte passe deg best.</p>
+				</div>
 			</div>
 
 			<div class="row container-registration">

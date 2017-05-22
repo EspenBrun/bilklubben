@@ -10,9 +10,15 @@
 	padding-top: 20vh;
 	font-size: 5em;
 }
-.container-registration {
-  padding: 60px 0px;
+.container-info {
+  padding-top: 100px;
 }
+
+.info {
+  color: white;
+  font-size: 1.2em;
+}
+
 .container-main {
   padding: 60px 0px;
 }
