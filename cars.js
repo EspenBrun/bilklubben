@@ -2,7 +2,6 @@ $(document).ready(function(){
 	// load footer and header
 	$('.navbar').load('navbar.html');
 	$('.footer').load('footer.html');
-    $('.alert').hide();
 
 	// set datetimepickers
 	$('.date-from').datetimepicker({
