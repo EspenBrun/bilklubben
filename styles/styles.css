@@ -43,3 +43,8 @@
   display: none;
 }
 
+/*navbar*/
+.nav-logout {
+  visibility: hidden;
+}
+
