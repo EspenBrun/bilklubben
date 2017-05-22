@@ -29,7 +29,7 @@
 
 			if ($res) {
 		        echo "Takk for din bestilling";
-				mysqli_close($res);
+				mysqli_free_result($res);
 			} else echo "Noe gikk galt.";
 	    }
 	} else {

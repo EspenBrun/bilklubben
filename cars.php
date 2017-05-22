@@ -10,7 +10,7 @@
 	    $sql_cars = "SELECT * FROM espenkb.cars";
 	    $res_cars = mysqli_query($con, $sql_cars);
 	    mysqli_close($con);
-	    
+
     }
     else {
 	    header('Location: ./index.php');
@@ -137,7 +137,7 @@
 							<hr/> 
 					        <?php
 					    }
-					    mysqli_close($res);
+					    mysqli_free_result($res_cars);
 				    ?>
 				</div>
 			</div>

@@ -15,11 +15,11 @@
 			$_SESSION['email'] = $email;
 			$_SESSION['pwd'] = $pwd;
 			header('Location: ../cars.php');
-			mysqli_close($res);
+			mysqli_free_result($res);
 		} else {
 			echo "<h3>Beklager, feil brukernavn og/eller passord</h3>";
 			echo "<h3><a href='../index.php'>Tilbake</a></h3>";
-			mysqli_close($res);
+			mysqli_free_result($res);
 		}		
 	} else {
 		echo "<h3>Noe gikk galt ånei ånei epost og passord ikke mottat</h3>";
