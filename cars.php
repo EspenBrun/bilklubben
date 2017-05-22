@@ -49,7 +49,7 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="text-center">Velkommen, <?php echo $name;?></h2>
+					<h2>Velkommen, <?php echo $name;?></h2>
 					<h3>Her kan du se Bilklubbens biler</h3>
 					<hr/>
 					<?php
