@@ -74,13 +74,13 @@
 					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="phone">Telefonr:</label>
 					    <div class="col-sm-10">
-					      <input type="number" class="form-control" name="phone" placeholder="Telefonnr">
+					      <input type="text" class="form-control" name="phone" placeholder="Telefonnr">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label class="control-label col-sm-2" for="phone">Kortnummer:</label>
 					    <div class="col-sm-10">
-					      <input type="number" class="form-control" name="card" placeholder="Kortnummer">
+					      <input type="text" class="form-control" name="card" placeholder="Kortnummer">
 					    </div>
 					  </div>
 					  <div class="form-group">

@@ -17,9 +17,7 @@
   padding: 60px 0px;
 }
 
-/*
-* Modal
-*/
+/* Modal */
 .modal-header, h4, .close {
     background-color: #5cb85c;
     color:white !important;
