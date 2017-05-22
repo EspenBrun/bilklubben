@@ -127,7 +127,7 @@
 			          <h4>Login</h4>
 			        </div>
 			        <div class="modal-body" style="padding:40px 50px;">
-			          <form role="form" id="form-login" method="post" action="./scripts/login">
+			          <form role="form" id="form-login" method="post" action="./scripts/login.php">
 			            <div class="form-group">
 			              <label for="email">Epost</label>
 			              <input type="text" name="email" class="form-control" placeholder="Epost">
